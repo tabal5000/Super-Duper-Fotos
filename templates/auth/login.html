@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            {{ form.password }}
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <a href="/api/albums/?format=json">API za seznam albumov</a>
+    <a href="/api/albums/1/?format=json">API za en album</a>
+{% endblock %}
